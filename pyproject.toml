@@ -1,0 +1,23 @@
+[project]
+name = "alm-mcp"
+version = "1.0.6"
+description = "MCP server para IBM ELM (DOORS Next, EWM, ETM) via OSLC"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=2.2",
+    "requests>=2.31",
+    "rdflib>=7.0",
+]
+
+[project.scripts]
+alm-mcp = "alm_mcp.server:main"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
